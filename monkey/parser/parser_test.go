@@ -10,7 +10,7 @@ import (
 func TestLetStatement(t *testing.T) {
 	input := `
 	let x = 5;
-	lt y = 10;
+	let y = 10;
 	let foobar = 838383;
 	`
 	l := lexer.New(input)
@@ -19,7 +19,7 @@ func TestLetStatement(t *testing.T) {
 	if program == nil {
 		t.Fatalf("ParseProgram() returned nil")
 	}
-	if len(prigram.Statements) != 3 {
+	if len(program.Statements) != 3 {
 		t.Fatalf("program.Statement does not contain")
 	}
 	tests := []struct {

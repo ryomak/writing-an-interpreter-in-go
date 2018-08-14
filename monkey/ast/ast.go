@@ -13,7 +13,7 @@ type Statement interface {
 
 type Expression interface {
 	Node
-	expressionNode
+	expressionNode()
 }
 
 type Program struct {
@@ -21,8 +21,8 @@ type Program struct {
 }
 
 func (p *Program) TokenLiteral() string {
-	if lem(p.Statements) > 0 {
-		return p.StateMents[0].TokenLiteral()
+	if len(p.Statements) > 0 {
+		return p.Statements[0].TokenLiteral()
 	} else {
 		return ""
 	}
